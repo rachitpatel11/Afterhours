@@ -1,4 +1,10 @@
-# AFTERHOURS
+# AFTERHOURS 🌙
+
+An immersive late-night music experience.
+
+<escape>🔗</escape> **Live Website:** https://afterhours-beta-umber.vercel.app/
+
+<escape>💻</escape> **Source Code:** Available in this repository.
 
 ## Run it (demo works immediately)
 - Windows: double-click `start.bat`
