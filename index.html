@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AFTERHOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital@1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Afterhours: your music, written on the dark. Live lyrics, one line at a time."><meta name="theme-color" content="#08090B"><meta property="og:title" content="Afterhours"><meta property="og:description" content="Live lyrics for whatever you are playing, in a late-night listening room."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>"><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="bg"><div id="art-bg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div id="leak"></div></div>
+<div id="grain"></div><div id="dust"></div><div id="vig"></div><div id="beat"></div>
+<main>
+<header><div class="logo">Afterhours</div>
+<div class="right"><span id="status">Demo</span><div class="wave"><i></i><i></i><i></i><i></i></div>
+</div></header>
+<section id="stage"><div class="ln" id="l1"></div><div class="ln" id="l2"></div><div id="note"></div></section>
+<footer><div id="info"><div id="thumb"></div><div style="min-width:0"><div id="t">—</div><div id="a"></div></div><a id="open" style="display:none" href="#" target="_blank" rel="noopener" aria-label="Open in Spotify"><button><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a11 11 0 100 22 11 11 0 000-22zm5 15.8a.7.7 0 01-1 .2c-2.7-1.6-6-2-10-1.1a.7.7 0 11-.3-1.4c4.300-1 8-.6 11 1.200.3.200.4.700.3 1.100zm1.300-3a.9.9 0 01-1.200.3c-3-1.900-7.700-2.400-11.300-1.300a.9.9 0 11-.5-1.700c4.100-1.200 9.200-.6 12.700 1.500.4.200.5.800.3 1.200zm.1-3.100C14.800 7.500 8.800 7.300 5.300 8.400a1.100 1.100 0 11-.7-2.100c4-1.200 10.600-1 14.800 1.500a1.100 1.100 0 01-1.100 1.900z"/></svg></button></a></div>
+<div id="ctl"><button id="cPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM20 6v12L9.5 12z"/></svg></button><button id="cPlay" aria-label="Play or pause"><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><button id="cNext" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM4 6v12l10.5-6z"/></svg></button></div><div id="prog"><span id="cur">0:00</span><div id="bar"><div id="fill"></div></div><span id="tot">0:00</span></div></footer>
+</main>
+<nav id="dock"><button data-s="theme">Theme</button><button data-s="layout">Layout</button><button data-s="lights">Lights</button><button id="bAmb">Ambient</button><button data-s="sync">Sync</button><button data-s="source">Source</button><button id="bHelp">Guide</button></nav>
+<div id="sheet">
+<section data-p="theme"><p class="cap">Choose a mood</p><div id="themes"></div>
+<label>Lyrics <input type="color" id="cInk"></label><label>Glow <input type="color" id="cGlow"></label>
+<h5>Colour mode</h5><button class="chip" data-mode="preset">Presets</button><button class="chip" data-mode="solid">Solid colour</button><button class="chip" data-mode="song">Song colours</button><label>Solid <input type="color" id="cSolid" value="#101114"></label><h5>Cover</h5><button class="chip" id="bGlass">Liquid glass</button><button id="bArt" hidden></button></section>
+<section data-p="layout"><p class="cap">Arrange the stage</p>
+<div class="lays"><button data-lay="center"><i class="m m1"></i>Centre</button><button data-lay="split"><i class="m m2"></i>Split</button><button data-lay="mini"><i class="m m3"></i>Mini</button></div>
+<h5>Word pace</h5><button class="chip" data-pace=".7">Gentle</button><button class="chip" data-pace="1">Slow</button><button class="chip" data-pace="1.5">Dreamy</button>
+<h5>Extras</h5><button class="chip" id="bInfo">Song info</button><button class="chip" id="bFs">Fullscreen</button></section>
+<section data-p="lights"><p class="cap">Let the room move with the music</p>
+<button class="opt" id="bMic"><b>Microphone</b><small>Best with speakers. Earbuds and headphones won't work.</small></button>
+<button class="opt" id="bSys"><b>Tab / system audio</b><small>Pick the browser tab playing music and tick "share audio".</small></button>
+<button class="chip" id="bOff">Turn off</button></section>
+<section data-p="sync"><p class="cap">Lyrics out of step? Fix it in two taps</p>
+<h5>Nudge</h5><div class="nudges"><button data-nudge="-1000">−1s</button><button data-nudge="-250">−0.25s</button><button data-nudge="250">+0.25s</button><button data-nudge="1000">+1s</button></div>
+<small>Minus pulls the lyrics back (they show too early). Plus pushes them forward (they're late). Keys: [ and ]</small>
+<h5>Snap to what you hear</h5>
+<button class="opt" id="aNow"><b>I'm hearing the big line right now</b><small>Tap the moment that line starts.</small></button>
+<button class="opt" id="aNext"><b>I'm hearing the small line right now</b><small>Use this when the lyrics are behind the music.</small></button>
+<span id="offs"></span></section>
+<section data-p="source"><p class="cap">Where do the words come from?</p>
+<div id="spBlock"><h5>1 · Spotify, automatic</h5><input type="text" id="cid" placeholder="Paste your Spotify Client ID">
+<button class="chip" id="conn">Connect Spotify</button><button class="chip" id="disc">Disconnect</button>
+<small>One-time setup: add <b id="ruri" style="color:var(--ink)"></b> as a Redirect URI in your Spotify dashboard.</small>
+</div><h5>Link your music · via Last.fm</h5><input type="text" id="lfUser" placeholder="Your Last.fm username"><button class="chip" id="lfConn">Connect Last.fm</button><button class="chip" id="lfDisc">Disconnect</button>
+<ol class="how"><li>Make a free account at <a href="https://www.last.fm/join" target="_blank" rel="noopener">last.fm</a></li><li>Settings → Applications → connect Spotify Scrobbling</li><li>Type your username above and press Connect</li></ol>
+<h5>Search any song</h5><input type="text" id="q" placeholder="artist – title, then Enter"><div id="res"></div><small class="sp-only">Connected to Spotify? Results here play on your Spotify straight from this page.</small>
+<h5>Your own .lrc file</h5><button class="chip" id="lrcb">Load .lrc file</button><input type="file" id="lrcf" accept=".lrc,.txt" hidden>
+<h5>Or just look around</h5><button class="chip" id="bDemo">Demo mode</button><small style="margin-top:24px"><a href="privacy.html" target="_blank" rel="noopener">Privacy</a> · Not affiliated with Spotify or Last.fm.</small></section>
+</div>
+<div id="guide"><div><p class="g-k"></p><h2 class="g-t"></h2><p class="g-p"></p><button id="gNext" class="chip">Next</button><button id="gSkip" class="chip">Skip</button></div></div>
+
+<div id="intro"><div id="scene"><h1 class="big" aria-label="Afterhours"></h1><p class="x">headphones on · lyrics after dark</p>
+<div id="buds" title="tap me"><svg class="bud l" viewBox="0 0 120 220"><use href="#budg"/></svg><svg class="bud r" viewBox="0 0 120 220"><use href="#budg"/></svg></div></div>
+<button id="enter"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Press play</button><p class="hint">best with earbuds in · tap the buds</p></div>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="bgr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf8f1"/><stop offset="1" stop-color="#b9b1a2"/></linearGradient><g id="budg"><rect x="47" y="76" width="28" height="136" rx="14" fill="url(#bgr)"/><ellipse cx="60" cy="64" rx="46" ry="52" fill="url(#bgr)"/><ellipse cx="42" cy="46" rx="13" ry="21" fill="#fff" opacity=".6"/><circle cx="76" cy="84" r="9" fill="#26262a"/></g></defs></svg>
+<svg width="0" height="0" style="position:absolute"><filter id="liquid"><feTurbulence type="fractalNoise" baseFrequency=".012 .018" numOctaves="2" seed="3"><animate attributeName="baseFrequency" dur="14s" values=".012 .018;.02 .01;.012 .018" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="12"/></filter></svg>
+<div id="toast"></div>
+<script src="config.js"></script>
+<script src="app.js"></script></body></html>
