@@ -4,6 +4,8 @@ An immersive late-night music experience.
 
 <escape>🔗</escape> **Live Website:** https://afterhours-beta-umber.vercel.app/
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-ff69b4?style=for-the-badge)](https://afterhours-beta-umber.vercel.app/)
+
 <escape>💻</escape> **Source Code:** Available in this repository.
 
 ## Run it (demo works immediately)
